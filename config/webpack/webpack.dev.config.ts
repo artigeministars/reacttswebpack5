@@ -83,7 +83,7 @@ const config: webpack.Configuration = {
         extensions: ["js", "jsx", "ts", "tsx"],
     }),
     new BundleAnalyzerPlugin({
-    // analyzerMode: 'disabled',
+    analyzerMode: 'disabled',
     statsFilename: "statsgemini.json",
     generateStatsFile: true,
     // Excludes module sources from stats file so there won't be any sensitive data

@@ -2,10 +2,10 @@
   "name": "reactwebpack1",
   "version": "1.0.0",
   "description": "boilerplate webpack ts react app",
-  "main": "index.js",
+  "private": true,
   "scripts": {
     "start": "cd build && webpack serve",
-    "dev": "webpack serve --config ./config/webpack/webpack.dev.config.ts",
+    "dev": "webpack serve --port 3000 --host 0.0.0.0 --config ./config/webpack/webpack.dev.config.ts",
     "build": "webpack --config ./config/webpack/webpack.prod.config.ts",
     "test": "jest",
     "test:watch": "jest --watch",
