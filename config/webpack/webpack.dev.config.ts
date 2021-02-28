@@ -3,8 +3,8 @@ import webpack from "webpack";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
 import ESLintPlugin from "eslint-webpack-plugin";
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
+import Dotenv from "dotenv-webpack";
 
 const config: webpack.Configuration = {
   mode: "development",
@@ -83,18 +83,26 @@ const config: webpack.Configuration = {
         extensions: ["js", "jsx", "ts", "tsx"],
     }),
     new BundleAnalyzerPlugin({
-    analyzerMode: 'disabled',
+    //analyzerMode: 'disabled',
     statsFilename: "statsgemini.json",
     generateStatsFile: true,
     // Excludes module sources from stats file so there won't be any sensitive data
     statsOptions: { source: false },
     logLevel: "error",
     defaultSizes: "parsed",
-    openAnalyzer: false,
+    openAnalyzer: true,
     
      // bundleDir: "../../reports",  
      // reportFilename: "reports",
      // reportTitle: "bundle analysis",
+    }),
+    new Dotenv({
+      path: './.env', // load this now instead of the ones in '.env'
+      safe: true, // load '.env.example' to verify the '.env' variables are all set. Can also be a string to a different file.
+      allowEmptyValues: true, // allow empty variables (e.g. `FOO=`) (treat it as empty string, rather than missing)
+      systemvars: true, // load all the predefined 'process.env' variables which will trump anything local per dotenv specs.
+      silent: false, // hide any errors
+      defaults: false // load '.env.defaults' as the default values if empty.
     })
   ],
   devtool: "inline-source-map",
