@@ -6,7 +6,7 @@
   "scripts": {
     "start": "cd build && webpack serve",
     "dev": "webpack serve --port 3000 --host 0.0.0.0 --config ./config/webpack/webpack.dev.config.ts",
-    "devlocal": "webpack serve --port 3000 --config ./config/webpack/webpack.dev.config.ts",
+    "devlocal": "webpack serve --port 3005 --config ./config/webpack/webpack.dev.config.ts",
     "build": "webpack --config ./config/webpack/webpack.prod.config.ts",
     "test": "jest",
     "test:watch": "jest --watch",
@@ -38,7 +38,6 @@
     "@types/react": "^17.0.2",
     "@types/react-dom": "^17.0.1",
     "@types/webpack": "^4.41.26",
-    "@types/webpack-bundle-analyzer": "^3.9.1",
     "@types/webpack-dev-server": "^3.11.1",
     "@typescript-eslint/eslint-plugin": "^4.15.2",
     "@typescript-eslint/parser": "^4.15.2",

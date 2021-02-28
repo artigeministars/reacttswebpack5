@@ -4,6 +4,7 @@ import "./App.css";
 import "./App.scss";
 
 function App() {
+    console.log(process.env.MAINTAINER);
     return (
         <div className="App">
             <header className="App-header">

@@ -83,21 +83,21 @@ const config: webpack.Configuration = {
         extensions: ["js", "jsx", "ts", "tsx"],
     }),
     new BundleAnalyzerPlugin({
-    //analyzerMode: 'disabled',
+    analyzerMode: 'disabled',
     statsFilename: "statsgemini.json",
     generateStatsFile: true,
     // Excludes module sources from stats file so there won't be any sensitive data
     statsOptions: { source: false },
     logLevel: "error",
     defaultSizes: "parsed",
-    openAnalyzer: true,
+    openAnalyzer: false,
     
      // bundleDir: "../../reports",  
      // reportFilename: "reports",
      // reportTitle: "bundle analysis",
     }),
     new Dotenv({
-      path: './.env', // load this now instead of the ones in '.env'
+      path: ".env", // load this now instead of the ones in '.env'
       safe: true, // load '.env.example' to verify the '.env' variables are all set. Can also be a string to a different file.
       allowEmptyValues: true, // allow empty variables (e.g. `FOO=`) (treat it as empty string, rather than missing)
       systemvars: true, // load all the predefined 'process.env' variables which will trump anything local per dotenv specs.
