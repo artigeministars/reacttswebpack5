@@ -1,5 +1,7 @@
 import React from "react";
-// import logo from './logo.svg';
+import logo from "./logo.svg";
+import jpegg from "./ge.jpeg";
+import pngg from "./gth.png";
 import "./App.css";
 import "./App.scss";
 
@@ -8,7 +10,7 @@ function App() {
     return (
         <div className="App">
             <header className="App-header">
-                <img src="" className="App-logo" alt="logo" />
+                <img src={logo} className="App-logo" alt="logo" />
                 <p>
                     Edit <code>src/App.tsx</code> and save to reload.
                 </p>
@@ -20,6 +22,8 @@ function App() {
                 >
                     Learn React
                 </a>
+                <img src={jpegg} className="App-logod" alt="logod" />
+                <img src={pngg} className="App-logdo" alt="logod" />
             </header>
         </div>
     );
