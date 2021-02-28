@@ -13,7 +13,8 @@
     "lint:fix": "npm run lint -- --fix",
     "linter": "eslint './src/**/*.{ts,tsx}'",
     "linter:fix": "eslint './src/**/*.{ts,tsx}' --fix",
-    "analyze": "webpack --profile --json > stats.json"
+    "stats": "webpack --profile --json > stats.json",
+    "build-report": "webpack-bundle-analyzer --port 4200 build/statsgemini.json"
   },
   "keywords": [],
   "author": "gemini stars",
@@ -67,6 +68,7 @@
     "ts-node": "^9.1.1",
     "typescript": "^4.2.2",
     "webpack": "^5.24.2",
+    "webpack-bundle-analyzer": "^4.4.0",
     "webpack-cli": "^4.5.0",
     "webpack-dev-server": "^3.11.2"
   },

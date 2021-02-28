@@ -3,13 +3,19 @@ import webpack from "webpack";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
 import ESLintPlugin from "eslint-webpack-plugin";
-
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 
 const config: webpack.Configuration = {
   mode: "development",
+  stats: {
+    logging: 'verbose',
+  },
   output: {
     publicPath: "/",
+    path: path.resolve("./build"),
+ //   path: path.resolve(__dirname,"/build"),
+ // path: path.resolve(__dirname, '../../build'),
   },
   entry: "./src/index.tsx",
   module: {
@@ -76,6 +82,20 @@ const config: webpack.Configuration = {
     new ESLintPlugin({
         extensions: ["js", "jsx", "ts", "tsx"],
     }),
+    new BundleAnalyzerPlugin({
+    // analyzerMode: 'disabled',
+    statsFilename: "statsgemini.json",
+    generateStatsFile: true,
+    // Excludes module sources from stats file so there won't be any sensitive data
+    statsOptions: { source: false },
+    logLevel: "error",
+    defaultSizes: "parsed",
+    openAnalyzer: true,
+    
+     // bundleDir: "../../reports",  
+     // reportFilename: "reports",
+     // reportTitle: "bundle analysis",
+    })
   ],
   devtool: "inline-source-map",
   devServer: {
