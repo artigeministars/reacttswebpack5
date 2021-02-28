@@ -12,7 +12,8 @@
     "lint": "eslint --ext .ts,.tsx",
     "lint:fix": "npm run lint -- --fix",
     "linter": "eslint './src/**/*.{ts,tsx}'",
-    "linter:fix": "eslint './src/**/*.{ts,tsx}' --fix"
+    "linter:fix": "eslint './src/**/*.{ts,tsx}' --fix",
+    "analyze": "webpack --profile --json > stats.json"
   },
   "keywords": [],
   "author": "gemini stars",
