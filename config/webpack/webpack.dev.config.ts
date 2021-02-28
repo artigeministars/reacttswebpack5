@@ -90,7 +90,7 @@ const config: webpack.Configuration = {
     statsOptions: { source: false },
     logLevel: "error",
     defaultSizes: "parsed",
-    openAnalyzer: true,
+    openAnalyzer: false,
     
      // bundleDir: "../../reports",  
      // reportFilename: "reports",
